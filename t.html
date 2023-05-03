@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You n Me</title>
+    <!-- <link rel="stylesheet" href="tc.css"> -->
+    <style>
+        p {
+            font-size: large;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+        
+        body {
+            background-color: #fce9d3;
+        }
+        
+        button {
+            cursor: pointer;
+        }
+        
+        #dialog {
+            width: 300px;
+        }
+        
+        .right {
+            margin-left: 120px;
+        }
+        
+        .pic1 {
+            margin-left: 3vw;
+        }
+        
+        #bocchi2 {
+            position: absolute;
+            left: 45%;
+            top: 511px;
+            /* top: 521px;
+    left: 53%; */
+        }
+        
+        .heading {
+            text-align: center;
+            font-size: 35px;
+            font-family: Candara, Oswald;
+        }
+        
+        .pic {
+            display: block;
+            margin: 0 auto;
+            width: 25%;
+        }
+        
+        #bocchi1 {
+            position: fixed;
+            top: 521px;
+            left: 53%;
+            transform: translate(-50%, -50%);
+        }
+        
+        @media (max-width:480px) {
+            .heading {
+                font-size: 29px;
+            }
+            .pic {
+                width: 75%;
+            }
+            #bocchi1 {
+                top: 432px;
+                left: 65%;
+            }
+            #bocchi2 {
+                left: 35%;
+                top: 421px;
+            }
+            .pic1 {
+                margin-left: 11vw;
+            }
+        }
+    </style>
+
+    <button tabindex="-1" id="bocchi2">Never</button>
+    <script>
+        const button2 = document.getElementById('bocchi2');
+        let left = 40;
+        button2.addEventListener('mouseover', function() {
+            if (left == 40) {
+                left = 35;
+            } else {
+                left = 40;
+            }
+            this.style.left = left + '%';
+        });
+        if (window.matchMedia("(max-width: 700px)").matches) {
+            let left = 30;
+            button2.addEventListener('mouseenter', function() {
+                if (left == 30) {
+                    left = 15;
+                } else {
+                    left = 30;
+                }
+                this.style.left = left + '%';
+            });
+        }
+    </script>
+</head>
+
+<body>
+
+    <p class="heading">Will U Forgive Me Tamanna For My Sins?</p>
+    <img class="pic" src="https://media.tenor.com/zGm5acSjHCIAAAAM/cat-begging.gif" alt="">
+    <title>Bocchi</title>
+
+    <button id="bocchi1" onclick="openModal()">Ok Fine!!!!!!</button>
+    <dialog id="dialog">
+        <img class="pic1" src="https://gifdb.com/images/high/cute-kitten-luv-u-35kaj1n0kevb82hb.webp" width="210px" height="250px" alt="">
+        <br/>
+        <center>
+            <p>Ab to Unblock Krde plmssss &#9786;</p>
+        </center>
+
+        <button onclick="closeModal()" class="right">close</button>
+    </dialog>
+    <script>
+        var dailog = document.getElementById("dialog");
+
+        function openModal() {
+            dailog.showModal();
+        }
+
+        function closeModal() {
+            dailog.close();
+        }
+    </script>
+</body>
+
+</html>
